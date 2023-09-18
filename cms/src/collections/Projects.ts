@@ -1,16 +1,42 @@
 import { CollectionConfig } from "payload/types";
+import { isValidUrl } from "../utils/validators";
 
 const Projects: CollectionConfig = {
-  slug: "projects",
+  slug: 'projects',
   admin: {
     useAsTitle: 'title',
   },
   fields: [
     {
-      name: "title",
-      label: "Title",
-      type: "text",
+      name: 'title',
+      label: 'Title',
+      type: 'text',
       required: true,
+    },
+    {
+      name: 'projectLinks',
+      label: 'Live Demo Links',
+      type: 'array',
+      labels: {
+        singular: 'Link',
+        plural: 'Links',
+      },
+      fields: [
+        {
+          name: 'url',
+          label: 'Link to github repository',
+          type: 'text',
+          validate: (val) => {
+            return isValidUrl(val)
+          },
+        },
+        {
+          name: 'linkText',
+          label: 'Text for button or link',
+          type: 'text',
+          required: true,
+        },
+      ],
     },
     {
       name: 'description',
@@ -23,6 +49,37 @@ const Projects: CollectionConfig = {
       label: 'Cover Image',
       type: 'upload',
       relationTo: 'media',
+    },
+    {
+      name: 'heading',
+      label: 'Heading',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'features',
+      type: 'array',
+      label: 'Project Features',
+      labels: {
+        singular: 'Feature',
+        plural: 'Features',
+      },
+      fields: [
+        {
+          name: 'feature',
+          type: 'text',
+        },
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+        },
+        {
+          name: 'details',
+          type: 'text',
+        },
+      ],
     },
     {
       name: 'content',
