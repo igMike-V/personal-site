@@ -24,7 +24,7 @@ const Projects: CollectionConfig = {
       fields: [
         {
           name: 'url',
-          label: 'Link to github repository',
+          label: 'Link',
           type: 'text',
           validate: (val) => {
             return isValidUrl(val)
