@@ -11,16 +11,16 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": "cms",
     "jsx": "react",
     "paths": {
       "payload/generated-types": [
-        "./src/payload-types.ts",
+        "./payload-types.ts",
       ],
     }
   },
   "include": [
-    "src"
+    "cms"
   ],
   "exclude": [
     "node_modules",

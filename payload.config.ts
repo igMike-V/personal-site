@@ -1,12 +1,12 @@
 import { buildConfig } from 'payload/config';
 import path from 'path';
-import Users from './collections/Users';
-import Media from './collections/Media';
-import Technologies from './collections/Technologies';
-import Posts from './collections/Posts';
-import Projects from './collections/Projects';
-import {Logo} from './graphics/Logo';
-import {Icon} from './graphics/Icon';
+import Users from './cms/collections/Users';
+import Media from './cms/collections/Media';
+import Technologies from './cms/collections/Technologies';
+import Posts from './cms/collections/Posts';
+import Projects from './cms/collections/Projects';
+import {Logo} from './cms/adminui/Logo';
+import {Icon} from './cms/adminui/Icon';
 import { payloadCloud } from '@payloadcms/plugin-cloud';
 
 export default buildConfig({
@@ -14,7 +14,7 @@ export default buildConfig({
     user: Users.slug,
     meta: {
       titleSuffix: '- igLab',
-      favicon: './assets/site_icon.png',
+      favicon: './cms/assets/site_icon.png',
     },
     components: {
       graphics: {
