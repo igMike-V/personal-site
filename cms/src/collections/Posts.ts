@@ -19,13 +19,6 @@ const Posts: CollectionConfig = {
       required: true,
     },
     {
-      name: 'author',
-      label: 'Author',
-      type: 'relationship',
-      relationTo: 'users',
-      required: true,
-    },
-    {
       name: 'coverImage',
       label: 'Cover Image',
       type: 'upload',
